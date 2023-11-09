@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head of HTML Doc -->
+<head>
+    <!-- Set of characters using Unicode Transformation Format - 8 bits. -->
+    <meta charset="UTF-8">
+    <!-- Tells browser to use latest version of Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Sets viewport and ensures the device width and initial scale is set to 1.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title in tab/window -->
+    <title>Document</title>
+    <!-- Link to font-awesome icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Link to styles.css, located in the css folder -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- Body of HTML Doc -->
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+    <!-- Head of HTML Doc -->
+<head>
+    <meta charset="UTF-8">
+    <!-- Tells browser to use latest version of Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Sets viewport and ensures the device width and initial scale is set to 1.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title in tab/window -->
+    <title>Document</title>
+</head>
+<!-- Body of HTML Doc -->
+<body>
+    <!-- Main heading for the page -->
+    <h1>Todo List: </h1>
+    <!-- An unordered list with the class toDoItems -->
+    <ul class="todoItems">
+    <!-- A for loop that adds an item to the list -->
+    <% for(let i=0; i < items.length; i++) {%>
+        <!-- A list with the class item -->
+        <li class="item">
+            <!-- Conditional that checks if items have been completed -->
+            <% if(items[i].completed === true) {%>
+                <!-- A span with the class completed. This span is used if items are completed -->
+                <span class='completed'><%= items[i].thing %></span>
+            <% }else{ %>
+                
+                <span><%= items[i].thing %></span>
+            <% } %>
+            <!-- Trash Icon -->
+            <span class='fa fa-trash'></span>
+        </li>
+    <% } %>
+    </ul>
+
+    <!-- An h2 that checks the number of items left on the list -->
+    <h2>Left to do: <%= left %></h2>
+    
+    <!-- An h2 that serves as a heading for the form bellow -->
+    <h2>Add A Todo:</h2>
+
+    <!-- A from that uses a post method to add an item to the list -->
+    <form action="/addTodo" method="POST">
+        <!-- An input that uses a text field to add an iten to the list -->
+        <input type="text" placeholder="Thing To Do" name="todoItem">
+        <!-- An input that, when clicked, submits the form -->
+        <input type="submit">
+    </form>
+    
+    <!-- Link to main.js file, located in the js folder -->
+    <script src='js/main.js'></script>
+<!-- Closing body tag -->
+</body>
+<!-- Closing HTML tag -->
+</html>
